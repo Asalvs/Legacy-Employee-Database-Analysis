@@ -12,12 +12,11 @@ create table departments (
 	primary key (dept_no)
 );
 
-select * from departments
 
 -- create table named titles
 create table titles(
 	title_id varchar (10) PRIMARY KEY NOT NULL,
-	title varchar(30)
+	title varchar(30) NOT NULL
 );
 
 --create table named employees
@@ -25,11 +24,11 @@ create table employees(
 	emp_no int PRIMARY KEY not null,
 	emp_title_id varchar (10),
 	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
-	birth_date date,
-	first_name varchar (30),
-	last_name varchar (30),
-	sex char,
-	hire_date date
+	birth_date date NOT NULL,
+	first_name varchar (30) NOT NULL,
+	last_name varchar (30) NOT NULL,
+	sex char NOT NULL,
+	hire_date date NOT NULL
 );
 
 -- create table named dept_emp
